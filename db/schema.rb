@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_26_024218) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_26_025417) do
+  create_table "challenge_days", force: :cascade do |t|
+    t.date "date"
+    t.binary "photo"
+    t.boolean "completed"
+    t.integer "challenge_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_challenge_days_on_challenge_id"
+  end
+
   create_table "challenges", force: :cascade do |t|
     t.string "name"
     t.date "start_date"
@@ -19,4 +29,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_26_024218) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "challenge_days", "challenges"
 end
