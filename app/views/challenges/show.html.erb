@@ -1,1 +1,6 @@
-Hello
+<div class="container">
+  <%= tag.h1 @challenge.name %>
+  <% @challenge_days.each do |cd| %>
+    <%= tag.div cd.date.strftime("%B %d") %>
+  <% end %>
+</div>

@@ -4,6 +4,7 @@ class ChallengesController < ApplicationController
   end
 
   def show
-    @challenge = Challenge.first
+    @challenge = Challenge.find_by id: params[:id]
+    @challenge_days = @challenge.challenge_days
   end
 end
