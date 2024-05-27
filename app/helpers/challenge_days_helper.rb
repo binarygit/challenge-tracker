@@ -1,0 +1,2 @@
+module ChallengeDaysHelper
+end

@@ -1,1 +1,7 @@
 <%= tag.div date.strftime("%B %d") %>
+<turbo-frame id=<%= dom_id(@challenge_day) %>>
+  <%= form_with url: challenge_day_path(@challenge_day), method: 'PATCH' do |f| %>
+    <%= f.file_field :photo %>
+    <%= f.submit "Add Photo" %>
+  <% end %>
+</turbo-frame>
