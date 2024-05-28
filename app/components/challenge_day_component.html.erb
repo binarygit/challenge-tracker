@@ -1,7 +1,27 @@
-<%= tag.div date.strftime("%B %d") %>
-<turbo-frame id=<%= dom_id(@challenge_day) %>>
-  <%= form_with url: challenge_day_path(@challenge_day), method: 'PATCH' do |f| %>
-    <%= f.file_field :photo %>
-    <%= f.submit "Add Photo" %>
-  <% end %>
-</turbo-frame>
+<% if @challenge_day.completed? %>
+  <div class="challenge-day-card challenge-day-card--complete card mb-2">
+    <div class="card-body">
+      <%= tag.p date.strftime("%B %d"), class: "h4" %>
+      image_preview
+    </div>
+  </div>
+<% else %>
+  <turbo-frame id=<%= dom_id(@challenge_day) %>>
+    <div class="challenge-day-card challenge-day-card--fail card mb-2">
+      <div class="card-body">
+        <%= tag.p date.strftime("%B %d"), class: "h4" %>
+        <%= form_with url: challenge_day_path(@challenge_day), method: 'PATCH' do |f| %>
+          <div class="form-check mb-3">
+            <%= f.check_box :completed, class: "form-check-input", id: dom_id(@challenge_day, "checkbox") %>
+            <%= f.label :completed, "Mark complete", class: "form-check-label", for: dom_id(@challenge_day, "checkbox") %>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.label "Upload", class: "input-group-text" %>
+            <%= f.file_field :photo, class: "form-control" %>
+          </div>
+          <%= f.submit "Save", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </turbo-frame>
+<% end %>

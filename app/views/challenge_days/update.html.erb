@@ -1,3 +1,8 @@
 <%= turbo_frame_tag dom_id(@challenge_day) do %>
-  <%= ('<img src="data:image/jpg;base64,%s">' % Base64.encode64(@challenge_day.photo)).html_safe %>
+  <div class="challenge-day-card challenge-day-card--complete card mb-2">
+    <div class="card-body">
+      <%= tag.p @challenge_day.date.strftime("%B %d"), class: "h4" %>
+      image_preview
+    </div>
+  </div>
 <% end %>
