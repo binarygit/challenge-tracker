@@ -2,7 +2,23 @@
   <div class="challenge-day-card challenge-day-card--complete card mb-2">
     <div class="card-body">
       <%= tag.p date.strftime("%B %d"), class: "h4" %>
-      image_preview
+      <a class="link-warning" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Show image</a>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"><%= date.strftime("%B %d") %></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="challenge-day-image-container">
+                <%= ('<img class="challenge-day-image img-fluid" src="data:image/jpg;base64,%s">' % Base64.encode64(@challenge_day.photo)).html_safe %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 <% else %>
