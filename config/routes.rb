@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :challenges do
+    scope module: 'challenges' do
+      resources :months, only: [:index, :show]
+    end
+  end
   root 'challenges#index'
   resources :challenges
   resources :challenge_days

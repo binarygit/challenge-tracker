@@ -2,7 +2,7 @@
   <h1>All Challenges</h1>
   <div class="list-group">
     <% @challenges.each do |c| %>
-        <%= link_to c.name, challenge_path(c), class: "list-group-item list-group-item-action" %>
+        <%= link_to c.name, challenge_months_path(c), class: "list-group-item list-group-item-action" %>
     <% end %>
   </div>
 </div>
