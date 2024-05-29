@@ -1,6 +1,6 @@
 class ChallengesController < ApplicationController
   def index
-    redirect_to challenge_path(Challenge.first)
+    @challenges = Challenge.all
   end
 
   def show
