@@ -1,7 +1,4 @@
-<div class="container">
-  <h1>View Logs</h1>
-  <p>Repo name: <a href="https://github.com/binarygit/show-job">Show Job</a></p>
-  <turbo-frame id="hare-ram">
+<turbo-frame id="hare-ram">
     <div class="log-displayer">
       <%= tag.h3 @message %>
       <%= tag.ul do %>
@@ -36,5 +33,9 @@
         <%= f.submit "Show logs", class: 'btn btn-primary' %>
       </div>
     <% end %>
+    <div class="row mt-3">
+      <%= tag.button class: "btn btn-danger" do %>
+        <%= link_to "reset", logs_path %>
+      <% end %>
+    </div>
   </turbo-frame>
-</div>
