@@ -1,8 +1,6 @@
 <div class="container">
   <h1><%= @challenge.name %></h1>
   <div class="list-group">
-    <% @months.each do |m| %>
-        <%= link_to Date::MONTHNAMES[m], challenge_month_path(@challenge, m), class: "list-group-item list-group-item-action" %>
-    <% end %>
+      <%= render(Challenges::MonthComponent.with_collection(@months, challenge: @challenge)) %>
   </div>
 </div>
