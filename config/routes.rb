@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :challenges do
     scope module: 'challenges' do
-      resources :months, only: [:index, :show]
+      resources :months, only: [:index]
+      # Write show route by hand so that I can use
+      # params[:month] in the controller.
+      get '/months/:month', to: 'months#show', as: 'month'
     end
   end
   root 'challenges#index'

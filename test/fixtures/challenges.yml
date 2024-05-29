@@ -1,11 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  start_date: 2024-05-26
-  end_date: 2024-05-26
-
-two:
-  name: MyString
-  start_date: 2024-05-26
-  end_date: 2024-05-26
+  name: First Challenge
+  start_date: 2024-05-01
+  end_date: 2024-06-30
