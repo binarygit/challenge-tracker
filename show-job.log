@@ -1,0 +1,105 @@
+commit 9bed2e3b16db619fb40d267d085442fe877577e1
+Author: binarygit <inscription4@outlook.com>
+Date:   Fri Jan 19 19:27:30 2024 +0545
+
+    Allow combining flags
+
+commit b742b9cc749f5124e62e70f06a31eead85df80f4
+Author: binarygit <inscription4@outlook.com>
+Date:   Fri Jan 19 18:41:09 2024 +0545
+
+    JSON is now an array of hashes instead of a multidimentional array with hashes
+
+commit be9cc7d67354b61c0b1ae7bb6f2252d23a00753d
+Author: binarygit <inscription4@outlook.com>
+Date:   Fri Jan 19 14:49:02 2024 +0545
+
+    Read from local file if env is test
+
+commit b2032d476be254c84adb195201c7a33bb9525c40
+Author: binarygit <inscription4@outlook.com>
+Date:   Fri Jan 19 14:31:28 2024 +0545
+
+    Apply rubocop and add --no-senior flag
+
+commit 7eb9d0b7a12aaec7ce669878de3fbeb7783a8f5f
+Author: binarygit <inscription4@outlook.com>
+Date:   Fri Jan 19 14:15:15 2024 +0545
+
+    Use search_for to search for us & non-us jobs
+
+commit 50fd9d4ed21f8833cbaecbd447a22a31c8c4de78
+Author: binarygit <inscription4@outlook.com>
+Date:   Fri Jan 19 12:13:15 2024 +0545
+
+    Use squish
+
+commit 66a7e78330fa58947bbd990cfb110d333aa369e1
+Author: binarygit <inscription4@outlook.com>
+Date:   Tue Jan 16 20:23:44 2024 +0545
+
+    Remove debug gem
+    
+    Requiring the debug gem caused the debugger to open in ruby 2.7
+    Here is an identical issue:
+    https://github.com/gjtorikian/html-proofer/issues/690
+
+commit 61aaf52c277980cae55ec51d4c4d44f1eba3c39b
+Author: binarygit <87677429+binarygit@users.noreply.github.com>
+Date:   Sun Jan 14 18:14:31 2024 +0545
+
+    Create LICENSE
+
+commit 8582cc689fed09a3ab587e9eb14ef2666a69496e
+Author: binarygit <87677429+binarygit@users.noreply.github.com>
+Date:   Fri Jan 12 22:31:07 2024 +0545
+
+    Update README.md
+
+commit d3156c2308b60a4f9d19f3220bfd96d5e638a679
+Author: binarygit <inscription4@outlook.com>
+Date:   Thu Aug 31 15:13:47 2023 +0545
+
+    Add a timestamp
+
+commit bc539a34dbb3718744d54c6704296a9ce36622ce
+Author: binarygit <87677429+binarygit@users.noreply.github.com>
+Date:   Wed Aug 30 22:37:40 2023 +0545
+
+    Update README.md with usuage
+
+commit 3c2fadeb9040e57375794a6110b0688ce33ca4e3
+Author: binarygit <inscription4@outlook.com>
+Date:   Wed Aug 30 17:27:31 2023 +0545
+
+    Display jobs from wearehiring
+
+commit ed2f7f179ee6175591dddcc1d8851329c2be50a5
+Author: binarygit <inscription4@outlook.com>
+Date:   Mon Aug 28 16:52:04 2023 +0545
+
+    Display github icon in gem page
+
+commit 4834f3f3d3906602c7738a8b2d9c40cdd30a6863
+Author: binarygit <inscription4@outlook.com>
+Date:   Mon Aug 28 10:51:01 2023 +0545
+
+    Updated version to 0.0.1
+
+commit 5cb3d48d2c3a921726bc76e93a01aec336b4bccb
+Author: binarygit <inscription4@outlook.com>
+Date:   Mon Aug 28 10:45:15 2023 +0545
+
+    Add a footer
+
+commit 08790faae57aebeacb08af5d6c2a676d197487fc
+Author: binarygit <inscription4@outlook.com>
+Date:   Fri Aug 25 18:12:18 2023 +0545
+
+    Add a README
+
+commit 4ffc41fc74b0971b54ebb59c9caed6a73cdedc05
+Author: binarygit <inscription4@outlook.com>
+Date:   Fri Aug 25 15:27:00 2023 +0545
+
+    Release v0

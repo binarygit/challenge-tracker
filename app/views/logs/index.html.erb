@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>View Logs</h1>
+  <p>Repo name: <a href="https://github.com/binarygit/show-job">Show Job</a></p>
+  <div class="log-displayer">
+    <%= tag.p @message %>
+    <%= tag.ul do %>
+      <% dates(@commits).each do |date| %>
+        <li><%= date %>:
+          <ul>
+            <% commits_on_date(date, @commits).each do |commit| %>
+              <%= tag.li "#{message(commit)}, Author: #{author(commit)}" %>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    <% end %>
+  </div>
+  <%= form_with url: new_log_path do |f| %>
+    <div class='row'>
+      <div class="col">
+        <%= f.label :year %>
+        <%= select_year Date.today, {}, class: "form-select" %>
+      </div>
+      <div class="col">
+        <%= f.label :month %>
+        <%= select_month Date.today, {}, class: "form-select" %>
+      </div>
+      <div class="col mb-2">
+        <%= f.label :day %>
+        <%= select_day Date.today, {}, class: "form-select"  %>
+      </div>
+      <%= f.submit "Show logs", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
