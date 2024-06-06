@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :challenge_days do
-    get 'photos/show/:challenge_day_id', to: 'photos#show', as: 'photo'
+    get ':challenge_day_id/photos/show/', to: 'photos#show', as: 'photo'
   end
 
   resources :challenges do
