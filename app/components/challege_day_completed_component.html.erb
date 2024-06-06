@@ -12,7 +12,9 @@
           </div>
           <div class="modal-body">
             <div class="challenge-day-image-container">
-              <%= ('<img class="challenge-day-image img-fluid" src="data:image/jpg;base64,%s">' % Base64.encode64(@challenge_day.photo)).html_safe %>
+              <turbo-frame id="<%= dom_id(@challenge_day, 'photo') %>" src="<%= challenge_days_photo_path(@challenge_day) %>" loading="lazy">
+                <img src="" alt="loading image soon">
+              </turbo-frame>
             </div>
           </div>
         </div>

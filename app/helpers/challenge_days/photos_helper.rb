@@ -1,0 +1,2 @@
+module ChallengeDays::PhotosHelper
+end

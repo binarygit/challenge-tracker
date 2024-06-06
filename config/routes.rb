@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :challenge_days do
+    get 'photos/show/:challenge_day_id', to: 'photos#show', as: 'photo'
+  end
+
   resources :challenges do
     scope module: 'challenges' do
       resources :months, only: [:index]
@@ -8,7 +12,6 @@ Rails.application.routes.draw do
     end
   end
   root 'challenges#index'
-  resources :challenges
   resources :challenge_days
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
