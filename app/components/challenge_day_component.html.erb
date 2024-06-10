@@ -3,5 +3,5 @@
 <% elsif @challenge_day.neutral? %>
   <%= render(::ChallengeDay::ChallengeDayNeutralComponent.new(challenge_day: @challenge_day)) %>
 <% else %>
-  Faileddddd
+  <%= render(::ChallengeDay::ChallengeDayFailComponent.new(challenge_day: @challenge_day)) %>
 <% end %>

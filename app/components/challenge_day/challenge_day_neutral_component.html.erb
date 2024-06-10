@@ -1,5 +1,5 @@
 <turbo-frame id=<%= dom_id(@challenge_day) %>>
-  <div class="challenge-day-card challenge-day-card--fail card mb-2">
+  <div class="challenge-day-card challenge-day-card--neutral card mb-2">
     <div class="card-body">
       <%= tag.p @challenge_day.date.strftime("%B %d"), class: "h4" %>
       <%= form_with url: challenge_day_path(@challenge_day), method: 'PATCH' do |f| %>
