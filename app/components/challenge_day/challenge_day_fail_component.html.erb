@@ -12,9 +12,9 @@
           </div>
           <div class="modal-body">
             <div class="challenge-day-image-container">
-              <turbo-frame id="<%= dom_id(@challenge_day, 'photo') %>" src="<%= challenge_days_photo_path(@challenge_day) %>" loading="lazy">
-                <img src="" alt="loading image soon">
-              </turbo-frame>
+              <% @challenge_day.images.each do |img| %>
+                <img class="img-fluid" src="<%= url_for img %>" alt="loading image soon">
+              <% end %>
             </div>
           </div>
         </div>
