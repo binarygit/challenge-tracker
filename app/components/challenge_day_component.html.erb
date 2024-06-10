@@ -1,14 +1,18 @@
-<% if @challenge_day.completed? %>
+<% if @challenge_day.success? %>
   <%= render(::ChallegeDayCompletedComponent.new(challenge_day: @challenge_day)) %>
-<% else %>
+<% elsif @challenge_day.neutral? %>
   <turbo-frame id=<%= dom_id(@challenge_day) %>>
     <div class="challenge-day-card challenge-day-card--fail card mb-2">
       <div class="card-body">
         <%= tag.p date.strftime("%B %d"), class: "h4" %>
         <%= form_with url: challenge_day_path(@challenge_day), method: 'PATCH' do |f| %>
           <div class="form-check mb-3">
-            <%= f.check_box :completed, class: "form-check-input", id: dom_id(@challenge_day, "checkbox") %>
-            <%= f.label :completed, "Mark complete", class: "form-check-label", for: dom_id(@challenge_day, "checkbox") %>
+            <%= f.radio_button :status, :success, class: "form-check-input", id: dom_id(@challenge_day, "success_radio") %>
+            <%= f.label :status, "Mark success", class: "form-check-label", for: dom_id(@challenge_day, "success_radio") %>
+          </div>
+          <div class="form-check mb-3">
+            <%= f.radio_button :status, :fail, class: "form-check-input", id: dom_id(@challenge_day, "fail_radio") %>
+            <%= f.label :status, "Mark fail", class: "form-check-label", for: dom_id(@challenge_day, "fail_radio") %>
           </div>
           <div class="input-group mb-3">
             <%= f.label "Upload", class: "input-group-text" %>
@@ -19,4 +23,6 @@
       </div>
     </div>
   </turbo-frame>
+<% else %>
+  Faileddddd
 <% end %>
