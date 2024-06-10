@@ -6,6 +6,6 @@
 fix_<%= d %>:
   date: <%= d %>
   photo: 
-  completed: false
+  status: 'neutral'
   challenge: one
 <% end %>

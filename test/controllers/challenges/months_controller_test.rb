@@ -2,7 +2,7 @@ require "test_helper"
 
 class Challenges::MonthsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get challenges_months_index_url
+    get challenge_months_url(challenges(:one))
     assert_response :success
   end
 end
