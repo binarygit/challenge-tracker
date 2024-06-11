@@ -8,7 +8,7 @@ namespace :challenge_days do
       cd_with_images.each_with_index do |cd, idx|
         t = Tempfile.create
         t.write cd.photo.force_encoding('UTF-8')
-        compressed_image = ImageProcessing::MiniMagick.strip.quality(85).interlace('Plane').gaussian_blur('0.05').call(t)
+        compressed_image = ImageProcessing::MiniMagick.call(t)
         cd.images.attach(io: compressed_image, filename: "my_photo_#{idx}.jpg", content_type: 'image/jpg')
         cd.save
         t.close
