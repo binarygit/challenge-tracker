@@ -1,4 +1,5 @@
 class Challenge < ApplicationRecord
+  belongs_to :user
   has_many :challenge_days
 
   after_create :create_challenge_days
