@@ -11,6 +11,9 @@
           <%= f.radio_button :status, :fail, class: "form-check-input", id: dom_id(@challenge_day, "fail_radio") %>
           <%= f.label :status, "Mark fail", class: "form-check-label", for: dom_id(@challenge_day, "fail_radio") %>
         </div>
+        <div class="form-check mb-3">
+          <%= f.text_area :note, class: 'form-control', id: dom_id(@challenge_day, "note"), placeholder: "Add a note" %>
+        </div>
         <div class="input-group mb-3">
           <%= f.label "Upload", class: "input-group-text" %>
           <%= f.file_field :photo, class: "form-control" %>

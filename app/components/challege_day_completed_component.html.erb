@@ -2,6 +2,11 @@
   <div class="card-body">
     <%= tag.p @challenge_day.date.strftime("%B %d"), class: "h4" %>
     <a class="link-warning" href="" data-bs-toggle="modal" data-bs-target=<%= "#" + dom_id(@challenge_day, 'modal') %>>Show image</a>
+    <% if @challenge_day.note? %>
+      <% @challenge_day.note.split("\r\n").each do |line| %>
+        <%= tag.p line, class: 'white' %>
+      <% end %>
+    <% end %>
 
     <div class="modal fade" id=<%= dom_id(@challenge_day, 'modal') %> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
