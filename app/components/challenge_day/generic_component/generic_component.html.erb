@@ -1,4 +1,4 @@
-<div class="challenge-day-card challenge-day-card--complete card mb-2">
+<%= tag.div class: "challenge-day-card card mb-2 #{@klass}" do %>
   <div class="card-body">
     <%= tag.p @challenge_day.date.strftime("%B %d"), class: "h4" %>
     <a class="link-warning" href="" data-bs-toggle="modal" data-bs-target=<%= "#" + dom_id(@challenge_day, 'modal') %>>Show image</a>
@@ -18,7 +18,7 @@
           <div class="modal-body">
             <div class="challenge-day-image-container">
               <% @challenge_day.images.each do |img| %>
-                <img class="img-fluid" src="<%= url_for @challenge_day.images.first %>" alt="loading image soon">
+                <img class="img-fluid" src="<%= url_for img %>" alt="loading image soon">
               <% end %>
             </div>
           </div>
@@ -26,4 +26,4 @@
       </div>
     </div>
   </div>
-</div>
+<% end %>
