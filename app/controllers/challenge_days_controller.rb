@@ -1,4 +1,8 @@
 class ChallengeDaysController < ApplicationController
+  def edit
+    @challenge_day = ChallengeDay.find_by id: params[:id]
+  end
+
   def update
     @challenge_day = ChallengeDay.find_by id: params[:id]
     if @challenge_day
