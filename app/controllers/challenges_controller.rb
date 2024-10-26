@@ -2,7 +2,7 @@ class ChallengesController < ApplicationController
   before_action :user
 
   def index
-    @challenges = user.challenges
+    @challenges = Challenge.all
   end
 
   private
